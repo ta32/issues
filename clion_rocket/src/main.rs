@@ -9,3 +9,13 @@ fn index() -> &'static str {
 fn rocket() -> _ {
     rocket::build().mount("/", routes![index])
 }
+
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn test() {
+        assert!(true);
+    }
+
+}

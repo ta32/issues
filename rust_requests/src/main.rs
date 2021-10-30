@@ -1,4 +1,3 @@
-#![forbid(unsafe_code)]
 use reqwest::blocking::Client;
 use reqwest::blocking::Response;
 use reqwest::{Result};
@@ -10,7 +9,14 @@ pub fn get_dai_price() -> Result<Response> {
 }
 
 fn main() {
-    if let Ok(res) = get_dai_price() {
-        let status = res.content_length();
+}
+
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn test() {
+        assert!(true);
     }
+
 }

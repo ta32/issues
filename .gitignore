@@ -1,0 +1,7 @@
+﻿rust_requests/target
+rust_requests/.idea
+clion_sqlite_build/target
+sqlite_test/target
+sqlite_test/.idea
+clion_rocket/.idea
+clion_rocket/target
