@@ -6,3 +6,8 @@ sqlite_test/.idea
 clion_rocket/.idea
 clion_rocket/target
 my-app/.idea
+functional_agent/.idea
+functional_agent/target
+reqwest_panic/target
+functional_agent/dist
+reqwest_panic/.idea
