@@ -13,13 +13,18 @@ use crate::component_broker::{ComponentBroker, Data};
 
 #[function_component(Model)]
 pub fn model() -> Html {
+    // example works if i had the non-functional component
+    // <div>
+    //     <div>{"Hello, world!"}</div>
+    //     <NonFunctional/>
+    //     <Functional />
+    // </div>
+    // not working example
     let result = html! {
         <div>
             <div>{"Hello, world!"}</div>
-            <NonFunctional />
             <Functional />
         </div>
-
     };
     result
 }
