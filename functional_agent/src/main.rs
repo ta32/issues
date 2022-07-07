@@ -19,7 +19,7 @@ pub fn model() -> Html {
     //     <NonFunctional/>
     //     <Functional />
     // </div>
-    // not working example
+    // both examples work
     let result = html! {
         <div>
             <div>{"Hello, world!"}</div>
