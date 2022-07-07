@@ -1,10 +1,12 @@
 use yew::prelude::*;
-use yew_agent::{Dispatched, use_bridge, UseBridgeHandle};
+use yew_agent::{Bridged, Dispatched, use_bridge, UseBridgeHandle};
 use crate::{api_agent, ApiAgent, ComponentBroker, Data};
+use crate::api_agent::Fetch;
 
 #[function_component(Functional)]
 pub fn functional() -> Html {
     let first_render = use_state(|| true);
+    let dispatcher = use_mut_ref(|| ApiAgent::dispatcher());
     let api_msg = use_state(|| "initial-functional".to_string());
     {
         let api_msg = api_msg.clone();
@@ -19,14 +21,19 @@ pub fn functional() -> Html {
                 }
             }
         });
+        // use_ref(|| ComponentBroker::bridge(Callback::from(move |_| {
+        //     api_msg.set("functional component got data".into());
+        // })));
     }
+
     {
+        let dispatcher = dispatcher.clone();
         let first_render = first_render.clone();
         use_effect( move || {
+            log::info!("use effect dispatch");
             if *first_render {
-                let mut dispatcher = ApiAgent::dispatcher();
                 log::info!("sending fetch request for API B");
-                dispatcher.send(api_agent::Fetch::ApiB);
+                dispatcher.borrow_mut().send(Fetch::ApiB);
                 first_render.set(false);
             }
             || ()
