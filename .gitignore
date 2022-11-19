@@ -11,3 +11,7 @@ functional_agent/target
 reqwest_panic/target
 functional_agent/dist
 reqwest_panic/.idea
+trait_impl/.idea
+trait_impl/examples/demo/target
+trait_impl/target
+trait_impl/examples/demo/.idea
