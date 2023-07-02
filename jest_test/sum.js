@@ -1,3 +1,8 @@
+
+function sum2(a, b) {
+  return a + b;
+}
+
 async function sum(a, b) {
   let passKey = await crypto.subtle.generateKey(
     {
@@ -9,4 +14,5 @@ async function sum(a, b) {
   );
   return a + b;
 }
-module.exports = sum;
+
+module.exports = {sum, sum2}

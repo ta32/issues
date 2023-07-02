@@ -15,3 +15,5 @@ trait_impl/.idea
 trait_impl/examples/demo/target
 trait_impl/target
 trait_impl/examples/demo/.idea
+jest_test/node_modules
+jest_test/.idea
