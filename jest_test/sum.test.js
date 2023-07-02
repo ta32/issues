@@ -13,11 +13,18 @@ const {sum, sum2} = require('./sum');
 // })
 
 const crypto = require('node:crypto');
+
 Object.defineProperty(global.self, "crypto", {
   value: {
     subtle: crypto.webcrypto.subtle,
   },
 });
+
+// works
+// const cryptoModule = new Crypto();
+// Object.defineProperty(global, 'crypto', {
+//   value: cryptoModule
+// });
 
 test('sum adds 1 + 2 to equal 5 should fail', () => {
   sum(1, 2).then((result) => {
