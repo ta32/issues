@@ -21,14 +21,14 @@ Object.defineProperty(global.self, "crypto", {
   },
 });
 
-// works
+// const Crypto = require('@peculiar/webcrypto').Crypto;
 // const cryptoModule = new Crypto();
 // Object.defineProperty(global, 'crypto', {
 //   value: cryptoModule
 // });
 
 test('sum adds 1 + 2 to equal 5 should fail', () => {
-  sum(1, 2).then((result) => {
+  return sum(1, 2).then((result) => {
     expect(result).toBe(5);
   });
 });
