@@ -1,3 +1,4 @@
+const Crypto = require('@peculiar/webcrypto').Crypto;
 const {sum, sum2} = require('./sum');
 
 //const { subtle } = require('node:crypto').webcrypto;
@@ -12,8 +13,8 @@ const {sum, sum2} = require('./sum');
 //   }
 // })
 
+// this polyfill doesn't work
 const crypto = require('node:crypto');
-
 Object.defineProperty(global.self, "crypto", {
   value: {
     subtle: crypto.webcrypto.subtle,
@@ -32,7 +33,7 @@ test('sum adds 1 + 2 to equal 5 should fail', () => {
   });
 });
 
-test('sum 2 adds 1 + 2 to equal 5 should fail', () => {
-  expect(sum2(1, 2)).toBe(5);
-});
-
+// test('sum 2 adds 1 + 2 to equal 5 should fail', () => {
+//   expect(sum2(1, 2)).toBe(5);
+// });
+//
